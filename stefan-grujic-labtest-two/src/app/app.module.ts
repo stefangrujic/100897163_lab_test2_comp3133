@@ -8,10 +8,11 @@ import { MissiondetailsComponent } from './missiondetails/missiondetails.compone
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { from } from 'rxjs';
 
 // Material Components
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCheckboxModule
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

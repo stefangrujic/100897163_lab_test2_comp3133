@@ -1,18 +1,19 @@
-<h1>Missionlist</h1>
-
-<button (click)="getLaunch()">Get Launches</button>
+<h1>SpaceX Mission Launch List</h1>
 
 <div *ngFor="let launch of launches | async">
-
-  <img src="{{launch.links.mission_patch_small}}" [routerLink]="['/missionlist', launch.flight_number]">
-  <h2>{{launch.mission_name}}</h2>
-  Lanuch year: {{launch.launch_year}}
-  <br />
-  <p>
-    {{launch.details}}
-  </p>
-  <br />
-
+  <mat-card class="spacex-card">
+    <mat-card-header>
+      <img mat-card-avatar src="{{launch.links.mission_patch_small}}" [routerLink]="['/missionlist', launch.flight_number]">
+      <mat-card-title>{{launch.mission_name}}</mat-card-title>
+      <mat-card-subtitle>Lanuch year: {{launch.launch_year}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{launch.details}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['/missionlist', launch.flight_number]">Details</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 
 

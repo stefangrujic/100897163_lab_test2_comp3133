@@ -18,6 +18,10 @@ export class MissiondetailsComponent implements OnInit {
 
   constructor(private network: NetworkService, private route: ActivatedRoute) { }
 
+  goToUrl(url:string){
+    window.open(url, "_blank");
+  }
+
   ngOnInit(): void {
     let id = parseInt(this.route.snapshot.paramMap.get('flight_number'));
     this.flight_number_id = id;

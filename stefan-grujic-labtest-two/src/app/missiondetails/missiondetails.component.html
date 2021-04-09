@@ -1,20 +1,43 @@
-<h1>Mission Details Works!</h1>
+<h1>SpaceX Mission Detalls</h1>
 
-<div>
-
-  flight_number = {{flight_number_id}}
-
-</div>
 <div *ngFor="let launch of launches | async">
   <div *ngIf="(launch.flight_number == flight_number_id)">
-      <img src="{{launch.links.mission_patch_small}}" [routerLink]="['/missionlist', launch.flight_number]">
-      <h2>{{launch.mission_name}}</h2>
-      Lanuch year: {{launch.launch_year}}
-      <br />
-      <p>
-        {{launch.details}}
-      </p>
-      <br />
+    <mat-card class="spacex-card">
+      <mat-card-header>
+        <img mat-card-avatar src="{{launch.links.mission_patch_small}}" class="patch-img">
+
+        <mat-card-title>Mission - {{launch.mission_name}}</mat-card-title>
+        <mat-card-subtitle>Name: {{launch.mission_name}}</mat-card-subtitle>
+        <mat-card-subtitle>Lanuch year: {{launch.launch_year}}</mat-card-subtitle>
+        <mat-card-subtitle>Lanuch year: {{launch.launch_year}}</mat-card-subtitle>
+
+        <mat-card-title>Rocket</mat-card-title>
+        <mat-card-subtitle>Name: {{launch.rocket.rocket_name}}</mat-card-subtitle>
+        <mat-card-subtitle>Type: {{launch.rocket.rocket_type}}</mat-card-subtitle>
+
+        <mat-card-title>Launch Site</mat-card-title>
+        <mat-card-subtitle>Name: {{launch.launch_site.site_name_long}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <mat-card-title>Launch Details</mat-card-title>
+        <p>{{launch.details}}</p>
+        <mat-card-title>More info on Launch Details</mat-card-title>
+        <mat-card-actions class="more-info-button">
+          <button mat-mini-fab color="primary" (click)="goToUrl(launch.links.article_link)">
+            <mat-icon> menu_open </mat-icon>
+          </button>
+          <button mat-mini-fab (click)="goToUrl(launch.links.wikipedia)">
+            <mat-icon> public </mat-icon>
+          </button>
+          <button mat-mini-fab color="warn" (click)="goToUrl(launch.links.video_link)">
+            <mat-icon> video_camera_front </mat-icon>
+          </button>
+        </mat-card-actions>
+
+      </mat-card-content>
+    </mat-card>
   </div>
 </div>
 

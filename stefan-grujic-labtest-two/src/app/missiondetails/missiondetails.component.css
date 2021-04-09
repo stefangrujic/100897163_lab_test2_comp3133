@@ -1,0 +1,17 @@
+.patch-img{
+  width: 200px;
+  height: 220px;
+}
+
+.spacex-card{
+  background-color: blanchedalmond;
+  margin-bottom: 20px;
+}
+
+mat-card-title{
+  color: indianred;
+}
+
+button{
+  margin-right: 7px;
+}

@@ -17,12 +17,8 @@ export class MissionlistComponent implements OnInit {
 
   constructor(private network: NetworkService, private router: Router) {}
 
-  getLaunch(){
-    this.launches = this.network.getLaunches();
-  }
-
   ngOnInit(): void {
-
+    this.launches = this.network.getLaunches();
   }
 
 }
