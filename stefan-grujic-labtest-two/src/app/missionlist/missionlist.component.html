@@ -1,3 +1,19 @@
 <h1>Missionlist</h1>
 
-<a routerLink="/missiondetails">Mission Details</a>
+<button (click)="getLaunch()">Get Launches</button>
+
+<div *ngFor="let launch of launches | async">
+
+  <img src="{{launch.links.mission_patch_small}}" [routerLink]="['/missionlist', launch.flight_number]">
+  <h2>{{launch.mission_name}}</h2>
+  Lanuch year: {{launch.launch_year}}
+  <br />
+  <p>
+    {{launch.details}}
+  </p>
+  <br />
+
+</div>
+
+
+
